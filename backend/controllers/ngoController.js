@@ -26,13 +26,13 @@ exports.getNGO = async (req, res) => {
 };
 
 exports.createEvent = async (req, res) => {
-  const { title, description,image, date, ngoId } = req.body;
+  const { title, description,image, date,location,collaboratingNGOs, ngoId } = req.body;
 
   try {
     const ngo = await NGO.findById(ngoId);
     if (!ngo) return res.status(404).json({ msg: 'NGO not found' });
 
-    const event = new Event({ title, description, date,image,location, ngo: ngoId });
+    const event = new Event({ title, description, date,image,location,collaboratingNGOs, ngo: ngoId });
     await event.save();
 
     ngo.events.push(event);
@@ -47,6 +47,16 @@ exports.createEvent = async (req, res) => {
 exports.getEvents = async (req, res) => {
   try {
     const events = await Event.find().populate('ngo');
+    res.json(events);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
+exports.getCollaboratedEvents = async (req, res) => {
+  console.log('getevent')
+  try {
+    const events = await Event.find({ collaboratingNGOs: { $exists: true, $ne: [] } }).populate('ngo collaboratingNGOs');
     res.json(events);
   } catch (error) {
     res.status(500).json({ error: 'Server error' });

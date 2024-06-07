@@ -8,7 +8,12 @@ const EventSchema = new mongoose.Schema({
   location:  {type:String ,},
   date: { type: Date, required: true },
   ngo: { type: mongoose.Schema.Types.ObjectId, ref: 'NGO' },
+  collaboratingNGOs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'NGO' }],
   volunteers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
 module.exports = mongoose.model('Event', EventSchema);
+
+
+
+

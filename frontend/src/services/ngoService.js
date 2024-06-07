@@ -18,4 +18,12 @@ const getEvents = () => {
   return axios.get(`${API_URL}/events`);
 };
 
-export default { createNGO, createEvent, getEvents ,getNGO};
+const getCollaboratedEvents = () => {
+  return axios.get(`${API_URL}/collaborated`);
+};
+
+
+
+
+export default { createNGO, createEvent, getEvents ,getNGO, getCollaboratedEvents};
+

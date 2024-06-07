@@ -56,7 +56,7 @@ const eventRoutes = require('./routes/eventRoutes');
 const donationRoutes = require('./routes/donationRoutes');
 const volunteerRequirementRoutes = require('./routes/volunteerRequirementRoutes');
 
-
+// const eventRoutes = require('./routes/eventRoutes');
 
 
 app.use('/api/users', userRoutes);

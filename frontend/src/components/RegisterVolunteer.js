@@ -21,7 +21,7 @@ const RegisterVolunteer = () => {
     };
     fetchEvents();
   }, []);
-console.log(localStorage.getItem('token'))
+console.log(JSON.parse(localStorage.getItem('token')).payload.userId)
   const { eventId, userId } = formData;
 
   const onChange = (e) => {
@@ -43,6 +43,7 @@ console.log(localStorage.getItem('token'))
     <>
     <div className='container m-5 d-flex justify-content-center   '    >
     <form onSubmit={onSubmit} style={{width:'70%'}}>
+      <h1> Register Volunteer to Event</h1>
       <select name="eventId" className='form-control mt-2 p-2' value={eventId} onChange={onChange} required>
         <option value="">Select Event</option>
         {events?.map((event) => (
@@ -51,7 +52,7 @@ console.log(localStorage.getItem('token'))
           </option>
         ))}
       </select>
-      <input type="text" name="userId" className='form-control mt-2 p-2' value={userId} onChange={onChange} placeholder="User ID" required />
+      <input readOnly type="text" name="userId" className='form-control mt-2 p-2' value={JSON.parse(localStorage.getItem('token'))?.payload?.userId || 'LOGIN TO DONATE' } onChange={onChange} placeholder="User ID" required />
       <button className='form-control mt-2 btn btn-danger' type="submit">Register as Volunteer</button>
     </form>
     </div>
