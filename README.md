@@ -13,3 +13,9 @@ Open the terminal  <br/>
 `cd backend`  <br/>
 `npm install` <br/>
 `npm install `   <br/>
+
+### Step 3
+ Open the Backend Link:
+ `http://localhost:5000`
+ Open the Frontend Link:
+ `http://localhost:3000`
