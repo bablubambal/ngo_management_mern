@@ -4,7 +4,7 @@
 ## Installation 
 ### Step 1
 Clone the App:
-`git clone `
+`git clone  https://github.com/bablubambal/ngo_management_mern.git`
 ### Step 2
 Open the terminal  <br/>
 `cd frontend` <br/>
