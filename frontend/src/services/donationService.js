@@ -9,4 +9,8 @@ const getDonation = () => {
   return axios.get(`${API_URL}/create`, );
 };
 
-export default { createDonation,getDonation };
+const getDonors = () => {
+  return axios.get(`${API_URL}/donors`,);
+};
+
+export default { createDonation,getDonation ,getDonors};

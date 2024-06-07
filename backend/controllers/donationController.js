@@ -29,3 +29,11 @@ exports.getDonation  = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
+exports.getDonors = async (req, res) => {
+  try {
+    const donors = await Donation.find().populate('donor ngo');
+    res.json(donors);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};

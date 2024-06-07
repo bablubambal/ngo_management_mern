@@ -5,6 +5,7 @@ import EventList from '../components/EventList'
 import ShowRequirements from '../components/ShowRequirements'
 import EveryEvent from '../components/EveryEvent'
 import CollobEvents from '../components/CollobEvents'
+import GetDonors from '../components/GetDonors'
 
 const Dashboard = () => {
  
@@ -16,6 +17,7 @@ const Dashboard = () => {
       
       {/* <EveryEvent /> */}
       <CollobEvents/>
+      <GetDonors/>
     </>
   )
 }
