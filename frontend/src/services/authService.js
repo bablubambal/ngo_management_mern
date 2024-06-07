@@ -22,4 +22,14 @@ const logout = ()=>{
 
 }
 
-export default { register, login,getAllUsers,logout };
+const getCurrentUser = () => {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
+
+  const user = JSON.parse(atob(token.split('.')[1]));
+  console.log('userrrrrget current user',user)
+  return user;
+};
+
+
+export default { register, login,getAllUsers,logout,getCurrentUser };

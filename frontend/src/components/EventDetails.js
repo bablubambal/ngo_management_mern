@@ -72,10 +72,11 @@ const EventDetails = () => {
                   NGO: {event.ngo.name}</small
                 >
               </p>
+              <h6>Location: {event.location}</h6>
               <p> Description:
                 {event.description}
               </p>
-              <p> Event On : <span>{new Date(event.date).toLocaleDateString()}</span> </p>
+              <p> Event On : {new Date(event.date).toLocaleDateString()} </p>
             
             </div>
           </div>

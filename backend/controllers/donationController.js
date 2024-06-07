@@ -19,3 +19,13 @@ exports.createDonation = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
+
+
+exports.getDonation  = async (req, res) => {
+  try {
+    const requirements = await Donation.find().populate('createdBy', 'name');
+    res.json(requirements);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};

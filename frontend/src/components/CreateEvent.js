@@ -7,6 +7,8 @@ const CreateEvent = () => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
+    location: '',
+    category: '',
     date: '',
     image:'',
     ngoId: '',
@@ -29,7 +31,7 @@ const CreateEvent = () => {
     fetchNgos();
   }, []);
 
-  const { title, description, date, image, ngoId } = formData;
+  const { title, description, date, image,location, ngoId } = formData;
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -54,6 +56,7 @@ const CreateEvent = () => {
    <form onSubmit={onSubmit}  style={{width:'80%'}}>
     <h2>Events</h2>
       <input className='form-control mt-2' type="text" name="title" value={title} onChange={onChange} placeholder="Event Title" required />
+      <input className='form-control mt-2' type="text" name="location" value={location} onChange={onChange} placeholder="Event Venue Location" required />
       <textarea className='form-control mt-2' name="description" value={description} onChange={onChange} placeholder="Description" required />
       <input className='form-control mt-2' type="text" name="image" value={image} onChange={onChange} placeholder="Event Image URL" required />
       <input className='form-control mt-2' type="date" name="date" value={date} onChange={onChange} required />

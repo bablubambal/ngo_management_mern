@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',

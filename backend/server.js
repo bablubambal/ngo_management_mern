@@ -54,11 +54,16 @@ const userRoutes = require('./routes/userRoutes');
 const ngoRoutes = require('./routes/ngoRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 const donationRoutes = require('./routes/donationRoutes');
+const volunteerRequirementRoutes = require('./routes/volunteerRequirementRoutes');
+
+
+
 
 app.use('/api/users', userRoutes);
 app.use('/api/ngos', ngoRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/donations', donationRoutes);
+app.use('/api/volunteer-requirements', volunteerRequirementRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;

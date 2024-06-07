@@ -32,7 +32,7 @@ exports.createEvent = async (req, res) => {
     const ngo = await NGO.findById(ngoId);
     if (!ngo) return res.status(404).json({ msg: 'NGO not found' });
 
-    const event = new Event({ title, description, date,image, ngo: ngoId });
+    const event = new Event({ title, description, date,image,location, ngo: ngoId });
     await event.save();
 
     ngo.events.push(event);

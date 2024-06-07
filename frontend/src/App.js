@@ -12,6 +12,9 @@ import Home from './components/Home';
 import Homepage from './pages/Homepage';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard';
+import CreateRequirement from './components/CreateRequirement';
+import ShowRequirements from './components/ShowRequirements';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -28,7 +31,17 @@ function App() {
           <Route path="/create-event" element={<CreateEvent></CreateEvent>} />
           <Route path="/events" element={<EventList></EventList>} />
           <Route path="/register-volunteer" element={<RegisterVolunteer></RegisterVolunteer>} />
+          <Route element={<ProtectedRoute roles={['volunteer']} />}></Route>
           <Route path="/donate" element={<Donate></Donate>} />
+          {/* <ProtectedRoute path="/register-volunteer" element={<RegisterVolunteer />} roles={['volunteer']} />
+        <ProtectedRoute path="/donate" element={<Donate />} />
+        <ProtectedRoute path="/create-requirement" element={<CreateRequirement />} roles={['ngo']} /> */}
+         <Route element={<ProtectedRoute roles={['user']} />}>
+          <Route path="/register-volunteer" element={<RegisterVolunteer />} />
+        </Route>
+          {/* <ProtectedRoute path="/create-requirement" element={<CreateRequirement/> }roles={['ngo']} /> */}
+          {/* <Route path="/create-requirement" } element={<CreateRequirement/> /> */}
+          <Route path="/requirements" element={<ShowRequirements/>} />
         </Routes>
       </div>
     </Router>
