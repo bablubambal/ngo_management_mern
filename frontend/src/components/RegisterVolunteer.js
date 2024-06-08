@@ -5,7 +5,7 @@ import volunteerService from '../services/volunteerService';
 const RegisterVolunteer = () => {
   const [formData, setFormData] = useState({
     eventId: '',
-    userId: '',
+    userId: JSON.parse(localStorage.getItem('token'))?.payload?.userId || '',
   });
 
   const [events, setEvents] = useState([]);

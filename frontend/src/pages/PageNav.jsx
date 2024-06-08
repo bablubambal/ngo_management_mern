@@ -40,6 +40,9 @@ const PageNav = () => {
             <li className="nav-item" id="nav_a4">
               <a className="nav-link" href="/register-volunteer">Volunteer</a>
             </li>
+            <li className="nav-item" id="nav_a4">
+              <a className="nav-link" href="/create-requirement">Requirement</a>
+            </li>
             <li className="nav-item" id="nav_a5">
               <a className="nav-link" onClick={()=> {
                 authService.logout()

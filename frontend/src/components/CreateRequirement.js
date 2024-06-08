@@ -28,12 +28,18 @@ const CreateRequirement = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name="title" value={title} onChange={onChange} placeholder="Title" required />
-      <textarea name="description" value={description} onChange={onChange} placeholder="Description" required />
-      <input type="date" name="date" value={date} onChange={onChange} required />
-      <button type="submit">Create Requirement</button>
+   <>
+   
+   <div className='container m-5 d-flex justify-content-center   '>
+   <form onSubmit={onSubmit} style={{width:'80%'}} >
+    <h1>Post Your Volunteer Requirement</h1>
+      <input className='form-control mt-2' type="text" name="title" value={title} onChange={onChange} placeholder="Title" required />
+      <textarea  className='form-control mt-2' name="description" value={description} onChange={onChange} placeholder="Description" required />
+      <input className='form-control mt-2' type="date" name="date" value={date} onChange={onChange} required />
+      <button className='form-control mt-2 btn btn-danger' type="submit">Create Requirement</button>
     </form>
+   </div>
+   </>
   );
 };
 

@@ -22,8 +22,10 @@ const Login = () => {
       const response = await authService.login(formData);
       
       localStorage.setItem('token', JSON.stringify(response.data));
-      const notify = () => toast('Login successful');
-      notify()
+      // const notify = () => toast('Login successful');
+      // notify()
+      alert('Login successful')
+      toast.success('logoin sucessfully');
       navigate('/dashboard')
     } catch (error) {
       const notfy = () => toast('Error during login');

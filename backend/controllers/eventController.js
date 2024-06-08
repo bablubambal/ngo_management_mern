@@ -9,7 +9,7 @@ exports.registerVolunteer = async (req, res) => {
 
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ msg: 'User not found' });
-
+    console.log('Usererrrrrrrr voutttttererererere')
     event.volunteers.push(user);
     await event.save();
 

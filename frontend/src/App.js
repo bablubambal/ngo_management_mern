@@ -12,6 +12,8 @@ import HomePage from './pages/Homepage'
 import CreateRequirement from './components/CreateRequirement';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
+import EventDetails from './components/EventDetails'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/events" element={<EventList />} />
+          <Route path='/event-details/:id' element={<EventDetails />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
         <Route element={<ProtectedRoute roles={['volunteer']} />}>
